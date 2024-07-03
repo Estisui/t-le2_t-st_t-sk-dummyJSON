@@ -1,7 +1,10 @@
-import defaultLink from "./defaultLink";
+const defaultLink = "https://dummyjson.com/products";
 
-const getItems = (link = defaultLink) => {
-  return fetch(link).then((res) => res.json());
+const getItems = (params) => {
+  return fetch(
+    defaultLink + '/search?' +
+      new URLSearchParams(params).toString()
+  ).then((res) => res.json());
 };
 
 export default getItems;
