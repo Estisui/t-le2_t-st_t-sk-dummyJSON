@@ -25,9 +25,9 @@ const PageButton = styled.button`
   }
 `;
 
-function PagesSwitch({ paginationProps, itemsTotal, onPrevClick, onNextClick }) {
-  const disableLeft = paginationProps.skip - paginationProps.limit < 0;
-  const disableRight = paginationProps.skip + paginationProps.limit > itemsTotal;
+function PagesSwitch({ skip, limit, itemsTotal, onPrevClick, onNextClick }) {
+  const disableLeft = skip - limit < 0;
+  const disableRight = skip + limit >= itemsTotal;
 
   return (
     <PagesSwitchContainer>

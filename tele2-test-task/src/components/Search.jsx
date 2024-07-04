@@ -31,17 +31,14 @@ const Submit = styled.input`
   }
 `;
 
-function Search({ updateItems, setSearchProp, setPaginationProps }) {
+function Search({ updateItems, setSearchProp, setSkip }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
     const { name } = formJson;
-    setPaginationProps({
-      skip: 0,
-      limit: 30,
-    })
+    setSkip(0);
     setSearchProp(name);
     updateItems({ q: name });
   };
