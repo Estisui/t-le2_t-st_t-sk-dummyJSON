@@ -1,5 +1,6 @@
 {
   "name": "tele2-test-task",
+  "base": "https://estisui.github.io/t-le2_t-st_t-sk-dummyJSON",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +9,9 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.4.6",
@@ -27,6 +30,7 @@
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.1.1",
     "jsdom": "^24.1.0",
     "vite": "^5.3.1",
     "vitest": "^1.6.0"
